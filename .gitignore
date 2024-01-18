@@ -9,6 +9,3 @@ staticfiles
 
 # Database
 db.sqlite3
-
-#Other
-tz
