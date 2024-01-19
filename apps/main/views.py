@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from .forms import TokenForm
+from .parser import connect_token
 
 
 class MainView(View):
@@ -13,6 +14,7 @@ class MainView(View):
     def post(self, request, *args, **kwargs):
         form = TokenForm(request.POST)
         if form.is_valid():
-            pass
+            token = form.cleaned_data['token']
+            connect_token(request.user, token)
 
         return render(request, self.template_name, {'form': form})
