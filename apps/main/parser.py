@@ -8,7 +8,6 @@ from apps.operations.tools import savingOperation
 
 
 ROOT_API = 'https://api.modulbank.ru/v1/'
-TOKEN = 'YzgzZjU2ZDMtMzliZS00ZmZjLWI0NmMtYzYxNDU3YzFjZThkY2NmOWZjZjYtNjMwNC00NzQ3LThmMWQtMjQ3ZTU3YjI0M2I5'
 
 
 def get_json(data: str) -> list:
