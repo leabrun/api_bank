@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from .forms import TokenForm
-from .parser import connect_token
+from .tasks import connect_token_async
 
 
 class MainView(View):
@@ -15,6 +15,6 @@ class MainView(View):
         form = TokenForm(request.POST)
         if form.is_valid():
             token = form.cleaned_data['token']
-            connect_token(request.user, token)
+            connect_token_async.delay(request.user, token)
 
         return render(request, self.template_name, {'form': form})
