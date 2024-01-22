@@ -15,6 +15,6 @@ class MainView(View):
         form = TokenForm(request.POST)
         if form.is_valid():
             token = form.cleaned_data['token']
-            connect_token_async.delay(request.user, token)
+            connect_token_async.delay(request.user.id, token)
 
         return render(request, self.template_name, {'form': form})

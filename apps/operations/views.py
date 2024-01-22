@@ -6,6 +6,7 @@ from .models import Operations
 from .serializers import OperationsSerializer
 from apps.accounts.models import Accounts
 
+
 class OperationsAPIView(APIView):
     permission_classes = (IsAuthenticated,)
 

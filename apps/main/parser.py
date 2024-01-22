@@ -21,6 +21,7 @@ def get_account_info(headers: dict) -> list:
 
     return get_json(data)
 
+
 def get_operation_history(id: str, headers: dict) -> list:
     full_url = ROOT_API + f'operation-history/{id}'
     data = requests.post(full_url, headers=headers).text

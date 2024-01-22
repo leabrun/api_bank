@@ -2,9 +2,10 @@ version: '3'
 
 services:
   web:
-    build:
-      context: ./
+    build: ./
     command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./:/app
     restart: always
     ports:
       - 8000:8000
@@ -12,23 +13,26 @@ services:
       - redis
 
   redis:
-    image: redis
+    image: redis:5-alpine
     restart: always
     ports:
       - 6379:6379
 
   celery:
-    build:
-      context: ./
+    build: ./
     command: celery -A core worker -l info
+    volumes:
+      - ./:/app
     depends_on:
+      - web
       - redis
 
   flower:
-    build: 
-      context: ./
-    command: celery flower -A core --port=5555
+    build: ./
+    command: celery -A core flower --port=5555 --broker=redis://redis:6379/0
     ports:
       - 5555:5555
     depends_on:
+      - web
       - celery
+      - redis

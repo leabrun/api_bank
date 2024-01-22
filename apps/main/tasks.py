@@ -7,7 +7,7 @@ from apps.operations.tools import savingOperation
 
 
 @shared_task
-def connect_token_async(user, token: str) -> bool:
+def connect_token_async(user: int, token: str) -> bool:
     headers = get_headers(token)
     account_info = get_account_info(headers)
 

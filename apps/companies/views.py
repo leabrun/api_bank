@@ -5,6 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from .models import Companies
 from .serializers import CompaniesSerializer
 
+
 class CompaniesAPIView(APIView):
     permission_classes = (IsAuthenticated,)
 
