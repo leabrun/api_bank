@@ -2,7 +2,6 @@
 
 <p>This simple api on the index page requests a token from the "Module Bank". An asynchronous transaction starts to be executed to save to the local database. Data to save: all companies on the account, all bank accounts for each company, all transactions on each bank account.</p>
 
-
 ### Stack:
 <p align="center">
     <img src="https://img.shields.io/badge/Django-3.2.8-blue?logo=django&style=flat"/>
@@ -15,7 +14,6 @@
     <img src="https://img.shields.io/badge/Requests-2.26.0-yellow?logo=requests&style=flat"/>
     <img src="https://img.shields.io/badge/Docker%20Compose-1.29.2-blue?logo=docker&style=flat"/>
 </p>
-
 
 ### Getting Started:
 1. Clone the repository:
@@ -31,10 +29,8 @@ cd api_bank
 docker-compose up -d --build
 ```
 
-
 ### API Testing:
 Explore the API using [Postman](https://www.postman.com/leabrun/workspace/api-bank/overview).
-
 
 ### Note:
 To fully use the api, you need to log in. Use the command:
