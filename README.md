@@ -31,3 +31,10 @@ docker-compose up -d --build
 
 ### API Testing
 Explore the API using [Postman](https://www.postman.com/leabrun/workspace/api-bank/overview).
+
+### Note
+To fully use the api, you need to log in. Use the command:
+```
+docker-compose exec web ./manage.py createsuperuser --username=admin --email=admin@admin.com
+```
+*Use the password "admin". In case of using other data, pay attention to the "Authorization" in Postman.
