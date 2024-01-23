@@ -28,3 +28,6 @@ cd api_bank
 ```
 docker-compose up -d --build
 ```
+
+### API Testing
+Explore the API using [Postman](https://www.postman.com/leabrun/workspace/api-bank/overview).
