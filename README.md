@@ -14,3 +14,17 @@
     <img src="https://img.shields.io/badge/Requests-2.26.0-yellow?logo=requests&style=flat"/>
     <img src="https://img.shields.io/badge/Docker%20Compose-1.29.2-blue?logo=docker&style=flat"/>
 </p>
+
+### Getting Started:
+1. Clone the repository:
+```
+git clone git@github.com:leabrun/api_bank.git
+```
+2. Navigate to the project directory
+```
+cd api_bank
+```
+3. Run the containers
+```
+docker-compose up -d --build
+```
